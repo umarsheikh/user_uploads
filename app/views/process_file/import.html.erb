@@ -1,0 +1,11 @@
+<h1> Import CSV File </h1>
+<%= form_tag '/process_file/import', multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Upload File" %>
+<% end %>
+<% if @users %>
+	<% @users.each do |user| %>
+		<%= message_for(user).html_safe %>
+		<br>
+	<% end %>
+<% end %>
