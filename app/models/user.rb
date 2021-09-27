@@ -69,7 +69,7 @@ class User < ApplicationRecord
 		0.upto length-2 do |index|
 			if password[index..index+2].scan(/./).uniq.length == 1
 				@repeated_errors_count += 1
-				errors.add(:password, 'has repeated characters.')
+				errors.add(:password, 'has repeated characters')
 			end
 		end
 	end

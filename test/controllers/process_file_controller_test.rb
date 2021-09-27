@@ -1,8 +1,8 @@
 require "test_helper"
 
 class ProcessFileControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get process_file_index_url
+  test "should get root" do
+    get process_file_import_url
     assert_response :success
   end
 end
