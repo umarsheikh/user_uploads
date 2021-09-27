@@ -1,10 +1,10 @@
 module ProcessFileHelper
 
 		def message_for(user)
-			if user.errors
-				(user.errors.full_messages + [user.correction_message]).join("<br>")
+			if user.errors.present?
+				user.correction_message
 			else
-				"this user was imported successfully #{user.name}"
+				"#{user.name} was successfully saved"
 			end
 		end
 end

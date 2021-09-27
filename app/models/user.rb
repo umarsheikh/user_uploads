@@ -50,7 +50,11 @@ class User < ApplicationRecord
 	end
 
 	def correction_message
-		"This user #{name} needs #{count_of_corrections} fixes"
+		"Change #{count_of_corrections} #{maybe_pluralize('character', count_of_corrections)} of #{name}'s password"
+	end
+
+	def maybe_pluralize(string, count)
+		count == 1 ? string : string + 's'
 	end
 
 	def count_of_corrections

@@ -4,8 +4,10 @@
 	<%= submit_tag "Upload File" %>
 <% end %>
 <% if @users %>
-	<% @users.each do |user| %>
-		<%= message_for(user).html_safe %>
-		<br>
-	<% end %>
+	<div class='users'>
+		<% @users.each do |user| %>
+			<%= message_for(user).html_safe %>
+			<br>
+		<% end %>
+	</div>
 <% end %>
